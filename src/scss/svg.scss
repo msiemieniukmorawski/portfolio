@@ -1,7 +1,8 @@
-svg#logo__header{
+svg#logo__header {
     height: 40px;
     width: auto;
 }
+
 .st0 {
     fill: #232B5F;
 }
@@ -12,4 +13,26 @@ svg#logo__header{
 
 .st2 {
     fill: #4173A5;
+}
+
+#particles-js {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+#iparticles-js circle {
+    fill: white;
+    position: relative;
+    z-index: 100;
+}
+
+#particles-js line {
+    stroke: rgba(0, 255, 255, 0.05);
+    stroke-width: 1;
+    position: relative;
+    z-index: 0;
 }

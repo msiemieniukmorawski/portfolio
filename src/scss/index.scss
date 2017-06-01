@@ -5,7 +5,7 @@ body {
 .first__screen {
     background-color: #1c1d25;
     width: 100%;
-    height: 37em;
+    height: 95vh;
     display: block;
     position: relative;
 }
@@ -17,6 +17,11 @@ body {
     align-items: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    z-index: 20;
+}
+
+.main-navigation >* {
+    z-index: 10;
 }
 
 .nav-logo {
@@ -66,30 +71,213 @@ body {
             background-color: #f25757;
             transition: all .25s cubic-bezier(.694, .048, .335, 1);
         }
-        &:hover {
-            color: #ffffff;
-            outline-width: 0;
-        }
         &:hover:before,
         &:hover:after {
             width: 100%;
             left: 0;
         }
-        &:active,
         &:visited,
-        &:focus {
-            text-decoration: none;
+        &:active {
             color: #e4e4e6;
+            text-decoration: none;
+            outline-width: 0;
+        }
+        &:focus,
+        &:hover {
+            color: #ffffff;
+            text-decoration: none;
             outline-width: 0;
         }
     }
 }
 
-//
+// first screen
 .main__first {
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.name__first__screen {
+    position: relative;
+}
+
+.name--txt {
+    position: absolute;
+    top: -100px;
+    font-size: 2em;
+    width: 700px;
+    left: -60px;
+    color: #ffffff;
+}
+
+.name--txt h1 {
+    font-weight: 600;
+    span {
+        display: inline-block;
+    }
+}
+
+.button__about {
+    position: absolute;
+    bottom: 30px;
+    left: -55px;
+    width: 100%;
+    a {
+        font-size: 1.2em;
+        letter-spacing: 2px;
+        padding: 15px 25px;
+        background-color: #f06449;
+        background: linear-gradient(270deg, #f06449, #ef3636);
+        color: #fff;
+        transition: all .3s;
+        text-decoration: none;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.button__about--mask {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        -webkit-transform: translateX(-110%);
+        transform: translateX(-110%);
+        width: 100%;
+        background-color: #1b2e63;
+        background: linear-gradient(270deg, #4173A5, #213777);
+        transition: -webkit-transform .6s cubic-bezier(.694, .048, .335, 1) .05s;
+        transition: transform .6s cubic-bezier(.694, .048, .335, 1) .05s;
+        transition: transform .6s cubic-bezier(.694, .048, .335, 1) .05s, -webkit-transform .6s cubic-bezier(.694, .048, .335, 1) .05s;
+        z-index: 1;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        -webkit-transform: translateX(-110%);
+        transform: translateX(-110%);
+        width: 80%;
+        background-color: #26408b;
+        background: linear-gradient(270deg, #4173A5, #213777);
+        transition: -webkit-transform .6s cubic-bezier(.694, .048, .335, 1);
+        transition: transform .6s cubic-bezier(.694, .048, .335, 1);
+        transition: transform .6s cubic-bezier(.694, .048, .335, 1), -webkit-transform .6s cubic-bezier(.694, .048, .335, 1);
+        z-index: 2;
+    }
+    &:hover:before,
+    &:hover:after {
+        transform: translateX(200%);
+    }
+}
+
+.icon_social {
+    right: 70px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    a {
+        margin: 10px 0;
+        transition: all .25s cubic-bezier(.694, .048, .335, 1);
+        fill: #e4e4e6;
+        &:hover {
+            fill: #ffffff;
+        }
+    }
+}
+
+
+/* The button-maker */
+
+@mixin arrow-button($color, $background, $shadow, $font-size, $width, $height, $direction) {
+    background: none;
+    border: 0;
+    font-size: $font-size;
+    line-height: $height;
+    position: relative;
+    display: block;
+    bottom: 20px;
+    width: $width;
+    height: $height;
+    @if $direction=="up" {
+        transform: rotate(-90deg);
+    }
+    @else if $direction=="down" {
+        transform: rotate(90deg);
+    }
+    a {
+        color: $color;
+        text-decoration: none;
+        position: relative;
+        z-index: 10;
+    }
+    &::before,
+    &::after {
+        background: $background;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: all 1s;
+        height: $height/2;
+    }
+    &::before {
+        box-shadow: -1px 1px 0 $shadow, -2px 2px 0 $shadow, -3px 3px 0 $shadow, -4px 4px 0 $shadow;
+        transform: skew(45deg);
+        @if $direction=="left" {
+            bottom: 0;
+            z-index: 1
+        }
+        @else {
+            top: 0;
+        }
+    }
+    &::after {
+        box-shadow: 1px 1px 0 $shadow, 2px 2px 0 $shadow, 3px 3px 0 $shadow, 4px 4px 0 $shadow;
+        transform: skew(-45deg);
+        @if $direction=="left" {
+            top: 0;
+        }
+        @else {
+            bottom: 0;
+        }
+    }
+}
+
+.button__projects {
+    position: absolute;
+    bottom: 0;
+}
+
+.button__projects--link {
+    @include arrow-button(#fff, #ef3636, #f06449, 22px, 1.2em, 2em, down);
+    margin-top: 3em;
+}
+

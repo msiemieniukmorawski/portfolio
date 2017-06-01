@@ -17,7 +17,8 @@ gulp.task('default', function(){
 gulp.task('sass', function(){
 	return gulp.src('./src/scss/main.scss')
 		.pipe(sass({
-				"errLogToConsole":true
+				"errLogToConsole":true,
+                noCache : true,
 			}).on('error', sass.logError)
 		)
 		.pipe(autoprefixer({
