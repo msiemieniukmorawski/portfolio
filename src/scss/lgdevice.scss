@@ -1,4 +1,7 @@
 //                          Extra large
-@media (min-width: 1200px) {
-   
+@media (min-width: 992px) {
+    .owl__item--figure {
+        width: 936px;
+        height: 526px;
+    }
 }
