@@ -11,7 +11,27 @@ document.addEventListener("DOMContentLoaded", function() {
         loop: true,
         nav:false,
         dots:true,
+    });
+    $('.owl__html').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        items: 1,
+        loop: true,
+        nav:false,
+        dots:true,
     })
+$('.owl__email').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        items: 1,
+        loop: true,
+        nav:false,
+        dots:true,
+    })
+
+
 });
 
 

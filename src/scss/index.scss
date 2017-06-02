@@ -287,11 +287,19 @@ body {
 
 .section--title {
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
+    font-size: 2.5em;
+    color: #1C1D25;
+    text-transform: uppercase;
 }
 
 
 /*owl carousel*/
+.owl__item--figure {
+    width: 312px;
+    height: 176px;
+}
+
 
 .owl__container {
     .disabled {
@@ -314,12 +322,12 @@ body {
         transform: rotate(45deg);
         margin: 0 10px;
         top: 10px;
-        
+        cursor: pointer;
     }
     .owl-dot.active {
-            background-color: #26408b;
-            background: linear-gradient(270deg, #4173A5, #213777);
-        }
+        background-color: #26408b;
+        background: linear-gradient(270deg, #4173A5, #213777);
+    }
 }
 
 .owl-stage {
@@ -430,4 +438,8 @@ body {
         justify-content: center;
         align-items: center;
     }
+}
+.btn__carousel--git{
+    margin-left: 40px;
+    padding: 10px 55px;
 }
