@@ -46,10 +46,10 @@
                     </svg>
                 </a>
                 <ul class="nav-links">
-                    <li itemprop="name"><a href="#about" itemprop="url">O mnie</a> </li>
+                    <li itemprop="name"><a href="#about" class="about" itemprop="url">O mnie</a> </li>
                     <li itemprop="name"><a href="#projects" itemprop="url">Projekty</a> </li>
                     <li itemprop="name"><a href="#skills" itemprop="url">Umiejętności</a> </li>
-                    <li itemprop="name"><a href="#contact" itemprop="url">Kontakt</a> </li>
+                    <li itemprop="name"><a href="#contact" class="contact" itemprop="url">Kontakt</a> </li>
                 </ul>
             </nav>
             <header class="main__first">
@@ -80,7 +80,7 @@
                         </g>
                     </svg>
                     <div class="button">
-                        <a href="#about">O mnie<span class="button--mask"></span></a>
+                        <div class="about">O mnie<span class="button--mask"></span></div>
                     </div>
                 </div>
                 <div class="icon_social">
@@ -95,8 +95,8 @@
                         </svg>
                     </a>
                 </div>
-                <div class="button__projects">
-                    <a href="#projects" class="button__projects--link"></a>
+                <div class="button__bottom">
+                    <a href="#projects" class="button__bottom--link"></a>
                 </div>
             </header>
         </div>
@@ -105,7 +105,7 @@
                 <section class="projects__wordpress">
                     <h2 class="section--title">WordPress</h2>
                     <div class="owl__container owl__wordpress">
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/bmprojectit.jpg" srcset="./img/bmprojectit.jpg 400w, ./img/bmprojectit_x2.jpg 700w, ./img/bmprojectit_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="BM project IT" class="owl__item--images">
@@ -117,7 +117,7 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/socjolife.jpg" srcset="./img/socjolife.jpg 400w, ./img/socjolife_x2.jpg 700w, ./img/socjolife_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="Socjolofe" class="owl__item--images">
@@ -134,7 +134,7 @@
                 <section class="projects__html">
                     <h2 class="section--title">PSD &ndash;&gt; Html</h2>
                     <div class="owl__container owl__html">
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/w28.jpg" srcset="./img/w28.jpg 400w, ./img/w28_x2.jpg 700w, ./img/w28_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="Weekly WebDev Challenge 28" class="owl__item--images">
@@ -147,7 +147,7 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/wdolinie.jpg" srcset="./img/wdolinie.jpg 400w, ./img/wdolinie_x2.jpg 700w, ./img/wdolinie_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="w dolinie u Luby" class="owl__item--images">
@@ -163,9 +163,9 @@
                     </div>
                 </section>
                 <section class="projects__email">
-                    <h2 class="section--title">Email</h2>
+                    <h2 class="section--title">newsletter</h2>
                     <div class="owl__container owl__email">
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/strefa.jpg" srcset="./img/strefa.jpg 400w, ./img/strefa_x2.jpg 700w, ./img/strefa_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="email Strefa Kursów" class="owl__item--images">
@@ -178,7 +178,7 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="owl__item">
+                        <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
                                     <img src="./img/opel.jpg" srcset="./img/opel.jpg 400w, ./img/opel_x2.jpg 700w, ./img/opel_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="email opel" class="owl__item--images">
@@ -194,7 +194,59 @@
                     </div>
                 </section>
             </div>
+            <div class="container__about__contact">
+                <div class="half--about half">
+                    <section class="about">
+                        <h2>O mnie</h2>
+                        <div class="about--txt">
+                            <p> Marcin Siemieniuk-Morawski 24 lat pracuje jako
+                                <b>Freelance Front-end/WordPress Developer.</b>
+                            </p>
+                            <p>Poszukuję
+                                <b>atrakcyjnej</b> pracy bądź
+                                <b>ciekawych</b> zleceń. Atrakcyjna praca to taka w której będzie trzeba się pogłowić aby wykonać daną czynność, ale również od czasu do czasu projekt jak każdy inny (szablonowy)</p>
+                            <p>Nie cierpię bezczynności i nudy. Swój wolny czas poświęcam na poznawanie nowych mediów i technologii.</p>
+                            <p>Chciałbym nauczyć się:</p>
+                            <div class="about--icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" class="react" viewbox="0 0 34 32">
+                                    <path fill="#444" d="M19.3 16c0 1.3-1.06 2.38-2.38 2.38s-2.4-1.07-2.4-2.4c0-1.3 1.08-2.38 2.4-2.38s2.4 1.07 2.4 2.4z" />
+                                    <path fill="#444" d="M16.92 24.78c1.88 1.83 3.73 2.9 5.22 2.9.5 0 .96-.1 1.34-.32 1.34-.78 1.83-2.7 1.36-5.46-.07-.5-.18-.97-.3-1.5.5-.14.97-.3 1.43-.45 2.6-1 4.04-2.4 4.04-3.9 0-1.56-1.4-2.94-4-3.92-.4-.18-.9-.33-1.4-.46.2-.52.3-1 .3-1.5.5-2.8 0-4.75-1.4-5.53-.4-.23-.8-.33-1.3-.33-1.4 0-3.3 1.1-5.2 3-1.8-1.8-3.7-2.9-5.2-2.9-.5 0-.9.1-1.3.3-1.3.8-1.8 2.7-1.3 5.5l.3 1.5c-.5.2-.92.3-1.4.5-2.6 1-4 2.4-4 3.9-.02 1.5 1.4 2.9 4 3.9.47.2.9.4 1.45.5-.13.5-.23 1-.3 1.5-.45 2.7.04 4.7 1.35 5.4.4.3.8.4 1.3.4 1.5.1 3.34-1 5.2-2.8zm-1.44-3.47c.46.1.95.1 1.44.1h1.44c-.46.7-.95 1.2-1.44 1.8-.5-.5-.98-1.1-1.44-1.7zm-3.2-2.6c.27.5.5.9.78 1.3-.8-.1-1.54-.2-2.26-.4.23-.7.5-1.4.8-2.1.2.4.44.9.7 1.3zm-1.48-6.2c.72-.1 1.47-.3 2.26-.4l-.77 1.3s-.5.9-.7 1.3c-.4-.7-.6-1.4-.8-2.1zm1.4 3.5c.35-.7.7-1.4 1.12-2.1l1.26-2h2.34c.82 0 1.6.1 2.34.1.47.7.88 1.4 1.26 2 .42.7.78 1.4 1.1 2.1-.32.7-.68 1.4-1.1 2.1-.38.7-.82 1.4-1.26 2-.77.1-1.54.1-2.34.1-.82 0-1.6 0-2.34-.1-.46-.6-.87-1.3-1.26-2-.4-.7-.77-1.4-1.1-2.1zm10.07-1.4l-.7-1.3c-.25-.4-.48-.8-.76-1.2.8.1 1.6.3 2.3.4-.2.7-.5 1.5-.8 2.2zm0 2.8c.3.7.57 1.5.8 2.2-.72.2-1.47.3-2.26.4.3-.4.6-.8.8-1.2l.7-1.2zm.6 8.9c-.2.2-.47.2-.75.2-1.26 0-2.83-1-4.38-2.5.75-.8 1.47-1.7 2.2-2.7 1.2-.1 2.36-.2 3.44-.5.13.5.2.9.28 1.4.36 2.2.08 3.8-.8 4.3zm1.33-13.5c2.88.9 4.6 2.1 4.6 3.3 0 1-1.18 2-3.26 2.8-.4.1-.87.3-1.34.4-.33-1-.74-2.1-1.26-3.2.52-1.1.95-2.2 1.26-3.2zm-2.06-7.3c.3 0 .52.1.75.2.8.5 1.1 2.1.8 4.3l-.3 1.4c-1.1-.2-2.3-.4-3.5-.5-.7-1-1.5-1.9-2.2-2.7 1.5-1.5 3.1-2.6 4.4-2.6zm-3.78 5.2h-2.88c.46-.6.95-1.2 1.44-1.7l1.44 1.7zm-7.38-5c.2-.1.46-.1.75-.1 1.26 0 2.83 1 4.37 2.5-.75.8-1.47 1.7-2.2 2.7-1.2.1-2.35.3-3.44.6-.12-.47-.2-.93-.28-1.4-.36-2.2-.07-3.72.8-4.24zM9.64 19.3c-2.88-.82-4.6-2.08-4.6-3.24C5.04 15 6.22 14 8.3 13.2c.5-.15.9-.3 1.4-.43.4 1.05.8 2.13 1.3 3.24-.5 1.1-.9 2.2-1.22 3.2zm.54 2.83c.08-.44.18-.9.3-1.4 1.07.24 2.22.4 3.43.55.7 1 1.5 1.9 2.2 2.7-1.5 1.54-3.1 2.6-4.3 2.6-.3 0-.5-.06-.7-.2-.8-.5-1.1-2.05-.8-4.23z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" class="anguar" viewbox="0 0 32 32">
+                                    <path fill="#444" d="M15.94 11.36l-2.06 4.87h4.43l-2.34-4.92v.06zm.02-7.06L4.68 8.27l1.8 14.78 9.5 5.22 9.55-5.3L27.3 8.2 15.97 4.3zm4.78 17.55L19.2 18.3h-6.24l-1.4 3.5-2.6.05 6.98-15.5 7.2 15.5h-2.4z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" class="magento" viewbox="0 0 32 32">
+                                    <path fill="#444" d="M26.94 10.16L16 3.4 5.05 10.18V22.4l2.92 1.74V11.86l8.05-5 8.03 5v12.3l2.93-1.76V10.17zm-9.35 5.3v10.07l-1.6 1-1.6-1V11.2l-3.58 2.22v12.52L16 29.16l5.17-3.22v-12.5l-3.58-2.2z" />
+                                </svg>
+                            </div>
+                            <p>Kolejność nauki będzie zależała od tego na co firma jest skupiona</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="half--contact half">
+                    <div class="close"></div>
+                    <section class="contact">
+                        <p>Zainteresowała Ciebie moja strona</p>
+                        <p>Masz ofertę pracy</p>
+                        <p>Chcesz tylko się spotkać i porozmawiać</p>
+                        <h2>Napisz do mnie</h2>
+                        <form id="form" class="contact__form" method="get" action="" novalidate="novalidate">
+                            <label for="name">Imię/Frima*</label>
+                            <input type="text" id="name" name="name">
+                            <label for="subject">Temat*</label>
+                            <input type="text" id="subject" name="subject">
+                            <label for="message">Wiadomość*</label>
+                            <input type="text" id="message" name="message">
+                        </form>
+                    </section>
+                </div>
+            </div>
         </main>
+        <footer>
+        </footer>
+    </div>
+    <div class="button__top">
+        <a href="#first__screen" class="button__top--link"></a>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/particles.js"></script>
