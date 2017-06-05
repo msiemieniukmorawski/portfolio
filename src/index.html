@@ -80,7 +80,7 @@
                         </g>
                     </svg>
                     <div class="button">
-                        <div class="about">O mnie<span class="button--mask"></span></div>
+                        <div id="about">O mnie<span class="button--mask"></span></div>
                     </div>
                 </div>
                 <div class="icon_social">
@@ -226,17 +226,29 @@
                 <div class="half--contact half">
                     <div class="close"></div>
                     <section class="contact">
-                        <p>Zainteresowała Ciebie moja strona</p>
-                        <p>Masz ofertę pracy</p>
-                        <p>Chcesz tylko się spotkać i porozmawiać</p>
+                        <p>Zainteresowała Ciebie moja strona
+                            <br> Masz ofertę pracy
+                            <br>Chcesz tylko się spotkać i porozmawiać</p>
                         <h2>Napisz do mnie</h2>
-                        <form id="form" class="contact__form" method="get" action="" novalidate="novalidate">
-                            <label for="name">Imię/Frima*</label>
-                            <input type="text" id="name" name="name">
-                            <label for="subject">Temat*</label>
-                            <input type="text" id="subject" name="subject">
-                            <label for="message">Wiadomość*</label>
-                            <input type="text" id="message" name="message">
+                        <form id="form" class="contact__form" method="post" novalidate="novalidate">
+                            <div class="field">
+                                <label for="name">Imię/Frima*</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="field">
+                                <label for="subject">Temat*</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="field">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" class="email" name="email">
+                            </div>
+                            <div class="field">
+                                <label for="message">Wiadomość*</label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+                            <div class="form__send disable">Wyślij<span class="button--mask form__send--message" data-send="false"></span></div>
+                            <p id="status"></p>
                         </form>
                     </section>
                 </div>
@@ -249,10 +261,10 @@
         <a href="#first__screen" class="button__top--link"></a>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="javascript/particles.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/owl.carousel.min.js"></script>
+    <script src="javascript/main.js"></script>
 </body>
 
 </html>

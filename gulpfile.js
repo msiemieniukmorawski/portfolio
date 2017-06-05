@@ -40,7 +40,7 @@ gulp.task('copy:html', function(){
 
 gulp.task('copy:js', function(){
 	return gulp.src('./src/js/*.js')
-		.pipe(gulp.dest('./dist/js'));
+		.pipe(gulp.dest('./dist/javascript'));
 });
 
 gulp.task('watch',['browserSync'], function(){

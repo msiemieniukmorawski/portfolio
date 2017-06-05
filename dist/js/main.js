@@ -1,4 +1,14 @@
 // ——————————————————————————————————————————————————
+// check has class
+// ——————————————————————————————————————————————————
+
+
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+
+// ——————————————————————————————————————————————————
 // init owl carousel
 // ——————————————————————————————————————————————————
 
@@ -37,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ——————————————————————————————————————————————————
 // link scroll
 // ——————————————————————————————————————————————————
-function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-}
+
 $('.close').click(function() {
     $('.half--about').removeClass("show-up");
     $('.half--contact').removeClass("show-down");
@@ -201,3 +209,122 @@ const next = () => {
 }
 
 next();
+
+
+// ——————————————————————————————————————————————————
+//Form focus input and textarea
+// ——————————————————————————————————————————————————
+$('.contact__form input').focus(function() {
+    $(this).prev('label').addClass('focus');
+});
+$('.contact__form input').focusout(function() {
+    if (hasClass($(this)[0], "email")) {
+
+    } else {
+        if (!$(this).val()) {
+            $(this).addClass('empty');
+            $(this).prev('label').removeClass('focus');
+            $(this).removeClass('ok');
+            check();
+        } else {
+            $(this).removeClass('empty');
+            $(this).addClass('ok');
+            check();
+        }
+    }
+
+});
+
+$('.contact__form textarea').focus(function() {
+    $(this).prev('label').addClass('focus');
+});
+$('.contact__form textarea').focusout(function() {
+    if (!$(this).val()) {
+        $(this).addClass('empty');
+        $(this).prev('label').removeClass('focus');
+        $(this).removeClass('ok');
+        check();
+    } else {
+        $(this).removeClass('empty');
+        $(this).addClass('ok');
+        check();
+    }
+});
+
+// ——————————————————————————————————————————————————
+//Form vadlilate email
+// ——————————————————————————————————————————————————
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function validate() {
+    $("#result").text("");
+    var email = $("#email").val();
+    if (validateEmail(email)) {
+        $(this).addClass('ok');
+        $(".form__send").addClass("disable");
+        check();
+    } else {
+        $(this).addClass('empty');
+        $(this).removeClass('ok');
+        check();
+    }
+    return false;
+}
+
+$("#email").focusout(validate);
+
+// ——————————————————————————————————————————————————
+//anable btn send
+// ——————————————————————————————————————————————————
+
+function check() {
+    if (hasClass($('#name')[0], "ok") && hasClass($("#email")[0], "ok") && hasClass($("#email")[0], "ok") && hasClass($("#message")[0], "ok")) {
+        $(".form__send").removeClass("disable");
+        $(".button--mask").addClass(".form__send--message");
+        $(".form__send--message").attr('data-send', true);
+    } else {
+        $(".button--mask").removeClass(".form__send--message");
+        $(".form__send").addClass("disable");
+        
+    }
+}
+
+// ——————————————————————————————————————————————————
+//send message
+// ——————————————————————————————————————————————————
+
+$(".form__send--message").click(function () {
+
+    var name = $("#name").val();
+    var subject = $("#subject").val();
+    var email = $("#email").val();
+    var message = $("#message").val();
+    console.log(this.attr('data-send'));
+    if($(".form__send--message").attr('data-send') == "send"){
+      console.log(name+''+subject+' '+email+ ' ' +message);
+      startSubmit(name, subject, email, message);
+   }
+   else{
+
+   }
+});
+
+function startSubmit(name, subject, email, message) {
+    $("#status").html('wysyłam');
+    $.ajax({
+        url: "send.php?name=" + name + "&subject=" + subject + "&email=" + email + "&message=" + message,
+        success: function(data) {
+            if (data.error == 'sent') {
+                stop = true;
+            } else {
+                $("#status").html('wystąpił jakiś błąd przepraszam');
+            }
+        }
+    });
+}
+$(document).ajaxStop(function() {
+        $("#status").html('Odezwę się najszybciej jak będę mógł');
+});
