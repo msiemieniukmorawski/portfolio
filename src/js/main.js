@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // link scroll
 // ——————————————————————————————————————————————————
 
-$('.close').on("click",function() {
+$('.close').on("click", function() {
     $('.half--about').removeClass("show-up");
     $('.half--contact').removeClass("show-down");
     $('body').removeClass("overflow--hide");
@@ -70,22 +70,20 @@ $('a[href*="#"]')
     // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
-    .on("click",function(event) {
+    .on("click", function(event) {
         if (hasClass(this, "about")) {
             event.preventDefault();
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
             $('body').addClass("overflow--hide");
             $('.container__about__contact ').addClass("zindex");
-        } 
-        else if ( hasClass(this, "contact")){
-          event.preventDefault();
+        } else if (hasClass(this, "contact")) {
+            event.preventDefault();
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
             $('body').addClass("overflow--hide");
             $('.container__about__contact ').addClass("zindex");
-        }
-        else {
+        } else {
 
 
             // On-page links
@@ -228,7 +226,12 @@ $('.contact__form input').focus(function() {
 });
 $('.contact__form input').focusout(function() {
     if (hasClass($(this)[0], "email")) {
-
+        if (!$(this).val()) {
+            $(this).addClass('empty');
+            $(this).prev('label').removeClass('focus');
+            $(this).removeClass('ok');
+            check();
+        }
     } else {
         if (!$(this).val()) {
             $(this).addClass('empty');
@@ -298,7 +301,7 @@ function check() {
         $(".button--mask").removeClass(".form__send--message");
         $(".form__send").addClass("disable");
         $(".form__send--message").attr('data-send', false);
-        
+
     }
 }
 
@@ -306,20 +309,19 @@ function check() {
 //send message
 // ——————————————————————————————————————————————————
 
-$(".form__send--message").on("click",function () {
+$(".form__send--message").on("click", function() {
 
     var name = $("#name").val();
     var subject = $("#subject").val();
     var email = $("#email").val();
     var message = $("#message").val();
-    
-    if($(".form__send--message").attr('data-send') =="true"){
-      console.log(name+''+subject+' '+email+ ' ' +message);
-      startSubmit(name, subject, email, message);
-   }
-   else{
 
-   }
+    if ($(".form__send--message").attr('data-send') == "true") {
+        console.log(name + '' + subject + ' ' + email + ' ' + message);
+        startSubmit(name, subject, email, message);
+    } else {
+
+    }
 });
 
 function startSubmit(name, subject, email, message) {
@@ -336,5 +338,5 @@ function startSubmit(name, subject, email, message) {
     });
 }
 $(document).ajaxStop(function() {
-        $("#status").html('Odezwę się najszybciej jak będę mógł');
+    $("#status").html('Odezwę się najszybciej jak będę mógł');
 });
