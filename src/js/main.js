@@ -44,6 +44,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+// ——————————————————————————————————————————————————
+// open nav hamburger
+// ——————————————————————————————————————————————————
+
+ $('#hamburger').click(function () {
+        $(this).toggleClass('open');
+        $('.nav-links').toggleClass('open');
+    });
+  $('.nav-links li').click(function(){
+    $('#hamburger').removeClass('open');
+        $('.nav-links').removeClass('open');
+  })
 
 // ——————————————————————————————————————————————————
 // link scroll
@@ -58,12 +70,44 @@ $('.close').on("click", function() {
     }, 500);
 
 })
-$('#about').click(function(event) {
-    event.preventDefault();
+$('#button--about').click(function(event) {
+    if($(window).width() > 768){
+         event.preventDefault();
     $('.half--about').addClass("show-up");
     $('.half--contact').addClass("show-down");
     $('body').addClass("overflow--hide");
     $('.container__about__contact ').addClass("zindex");
+    }
+    else{
+        if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[class=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+    }
+   
 
 });
 $('a[href*="#"]')
@@ -71,13 +115,13 @@ $('a[href*="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')
     .on("click", function(event) {
-        if (hasClass(this, "about")) {
+        if (hasClass(this, "about") && $(window).width() > 768) {
             event.preventDefault();
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
             $('body').addClass("overflow--hide");
             $('.container__about__contact ').addClass("zindex");
-        } else if (hasClass(this, "contact")) {
+        } else if (hasClass(this, "contact") && $(window).width() > 768) {
             event.preventDefault();
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
@@ -221,6 +265,8 @@ next();
 // ——————————————————————————————————————————————————
 //Form focus input and textarea
 // ——————————————————————————————————————————————————
+
+
 $('.contact__form input').focus(function() {
     $(this).prev('label').addClass('focus');
 });
@@ -261,6 +307,15 @@ $('.contact__form textarea').focusout(function() {
         $(this).addClass('ok');
         check();
     }
+}).keypress(function() {
+    if (!$(this).val()) {
+        $(this).removeClass('ok');
+        check();
+    } else {
+        $(this).removeClass('empty');
+        $(this).addClass('ok');
+        check();
+    }
 });
 
 // ——————————————————————————————————————————————————
@@ -287,6 +342,7 @@ function validate() {
 }
 
 $("#email").focusout(validate);
+
 
 // ——————————————————————————————————————————————————
 //anable btn send
@@ -339,4 +395,50 @@ function startSubmit(name, subject, email, message) {
 }
 $(document).ajaxStop(function() {
     $("#status").html('Odezwę się najszybciej jak będę mógł');
+});
+
+
+
+// ——————————————————————————————————————————————————
+//hover skills
+// ——————————————————————————————————————————————————
+
+var nodes  = document.querySelectorAll('.single__skill'),
+    _nodes = [].slice.call(nodes, 0);
+
+var getDirection = function (ev, obj) {
+    var w = obj.offsetWidth,
+        h = obj.offsetHeight,
+        x = (ev.pageX - obj.offsetLeft - (w / 2) * (w > h ? (h / w) : 1)),
+        y = (ev.pageY - obj.offsetTop - (h / 2) * (h > w ? (w / h) : 1)),
+        d = Math.round( Math.atan2(y, x) / 1.57079633 + 5 ) % 4;
+  
+    return d;
+};
+
+var addClass = function ( ev, obj, state ) {
+    var direction = getDirection( ev, obj ),
+        class_suffix = "";
+    
+    obj.className = "";
+    
+    switch ( direction ) {
+        case 0 : class_suffix = '-top';    break;
+        case 1 : class_suffix = '-right';  break;
+        case 2 : class_suffix = '-bottom'; break;
+        case 3 : class_suffix = '-left';   break;
+    }
+    
+    obj.classList.add( state + class_suffix );
+};
+
+// bind events
+_nodes.forEach(function (el) {
+    el.addEventListener('mouseover', function (ev) {
+        addClass( ev, this, 'in' );
+    }, false);
+
+    el.addEventListener('mouseout', function (ev) {
+        addClass( ev, this, 'out' );
+    }, false);
 });
