@@ -9,10 +9,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://ms-m.pl" property="schema:url">
-    <!--    zmienić obrazek-->
-    <meta property="schema:image" content="http://riccardozanutta.com/img/social-image.jpg">
+    <meta property="schema:image" content="http://ms-m.pl/img/social-image.jpg">
+    <meta property="og:image" content="http://ms-m.pl/img/social-image.jpg" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -26,51 +25,52 @@
                     <span></span>
                     <span></span>
                 </div>
-                <nav itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="main-navigation">
-                    <a href="/" data-destination="home" itemprop="url" class="nav-logo">
-                        <svg version="1.1" height="40px" width="110px" id="logo__header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 122.3 44.9" xml:space="preserve">
-                            <g>
+                <div class="nav__container">
+                    <nav itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="main-navigation">
+                        <a href="/" data-destination="home" itemprop="url" class="nav-logo">
+                            <svg version="1.1" height="40px" width="110px" id="logo__header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 122.3 44.9" xml:space="preserve">
                                 <g>
-                                    <path class="st0" d="M25.7 27.9c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5v-24c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L11.7 17c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9H3.4V3.2h8.5s.6 0 .8.1c.2.1.5.2.7.4.2.2.4.5.6.8l10.7 21.1c.3.8.7 1.5 1 2.3z" />
+                                    <g>
+                                        <path class="st0" d="M25.7 27.9c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5v-24c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L11.7 17c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9H3.4V3.2h8.5s.6 0 .8.1c.2.1.5.2.7.4.2.2.4.5.6.8l10.7 21.1c.3.8.7 1.5 1 2.3z" />
+                                    </g>
+                                    <g>
+                                        <path class="st1" d="M27.8 26c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V18.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L13.7 15c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9H5.4V1.2h8.5s.6 0 .8.1c.2.1.5.2.7.4l.6.9 10.7 21.1c.3.7.7 1.5 1.1 2.3z" />
+                                    </g>
+                                    <g>
+                                        <path class="st0" d="M72.2 11.2c-.3.5-.6.8-.9 1s-.7.3-1.2.3c-.4 0-.9-.1-1.4-.4-.5-.3-1.1-.6-1.7-.9-.6-.3-1.4-.7-2.2-.9-.9-.2-1.8-.4-2.8-.4-1.8 0-3.1.4-4 1.2-.9.8-1.3 1.8-1.3 3.1 0 .8.3 1.5.8 2.1.5.6 1.2 1 2.1 1.4s1.9.8 3 1.1c1.1.3 2.2.7 3.4 1.1 1.2.4 2.3.9 3.4 1.4 1.1.6 2.1 1.3 3 2.1.9.9 1.6 1.9 2.1 3.1.5 1.2.8 2.7.8 4.4 0 1.9-.3 3.7-1 5.4s-1.6 3.1-2.9 4.4c-1.4 1.3-3 2.3-4.8 3s-4 1.1-6.3 1.1c-1.3 0-2.6-.1-3.9-.4-1.3-.3-2.6-.6-3.9-1.1s-2.4-1.1-3.5-1.7-2.1-1.4-2.9-2.2l2.9-4.5c.2-.3.5-.6.9-.8.4-.2.8-.3 1.2-.3.6 0 1.1.2 1.7.5.6.4 1.2.8 2 1.2.7.4 1.6.8 2.5 1.2 1 .4 2.1.5 3.4.5 1.7 0 3.1-.4 4.1-1.2 1-.8 1.5-2 1.5-3.7 0-1-.3-1.8-.8-2.4-.5-.6-1.2-1.1-2.1-1.5-.9-.4-1.8-.8-2.9-1.1-1.1-.3-2.2-.6-3.4-1-1.2-.4-2.3-.8-3.4-1.4-1.1-.5-2.1-1.3-2.9-2.1-.9-.9-1.6-2-2.1-3.3-.5-1.3-.8-2.9-.8-4.9 0-1.6.3-3.1.9-4.6.6-1.5 1.5-2.8 2.8-4 .9-1 2.4-1.9 4.2-2.6 1.8-.7 3.8-1 6.1-1 1.3 0 2.5.1 3.7.3 1.2.2 2.4.5 3.4.9 1.1.4 2.1.9 3 1.4s1.8 1.2 2.5 1.8l-2.3 4.4z" />
+                                    </g>
+                                    <g>
+                                        <path class="st2" d="M74.2 9.2c-.3.5-.6.8-.9 1s-.7.3-1.2.3c-.4 0-.9-.1-1.4-.4-.5-.3-1.1-.6-1.7-.9-.6-.3-1.4-.7-2.2-.9-.9-.2-1.8-.4-2.8-.4-1.8 0-3.1.4-4 1.2-.9.8-1.3 1.8-1.3 3.1 0 .8.3 1.5.8 2.1.5.6 1.2 1 2.1 1.4.9.4 1.9.8 3 1.1 1.1.3 2.2.7 3.4 1.1 1.2.4 2.3.9 3.4 1.4 1.1.6 2.1 1.3 3 2.1.9.9 1.6 1.9 2.1 3.1.5 1.2.8 2.7.8 4.4 0 1.9-.3 3.7-1 5.4s-1.6 3.1-2.9 4.4c-1.4 1.3-3 2.3-4.8 3s-4 1.1-6.3 1.1c-1.3 0-2.6-.1-3.9-.4-1.3-.3-2.6-.6-3.9-1.1s-2.4-1.1-3.5-1.7-2.1-1.4-2.9-2.2l2.9-4.5c.2-.3.5-.6.9-.8.4-.2.8-.3 1.2-.3.6 0 1.1.2 1.7.5.6.4 1.2.8 2 1.2.7.4 1.6.8 2.5 1.2 1 .4 2.1.5 3.4.5 1.7 0 3.1-.4 4.1-1.2 1-.8 1.5-2 1.5-3.7 0-1-.3-1.8-.8-2.4-.5-.6-1.2-1.1-2.1-1.5-.9-.4-1.8-.8-2.9-1.1-1.1-.3-2.2-.6-3.4-1-1.2-.4-2.3-.8-3.4-1.4-1.1-.5-2.1-1.3-2.9-2.1-.9-.9-1.6-2-2.1-3.3-.5-1.3-.8-2.9-.8-4.9 0-1.6.3-3.1.9-4.6.6-1.5 1.5-2.8 2.8-4 .9-1 2.4-1.9 4.2-2.6 1.8-.7 3.8-1 6.1-1 1.3 0 2.5.1 3.7.3 1.2.2 2.4.5 3.4.9 1.1.4 2.1.9 3 1.4s1.8 1.2 2.5 1.8l-2.3 4.4z" />
+                                    </g>
+                                    <g>
+                                        <path class="st0" d="M95 28c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V20.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L80.9 17.1c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9h-8.5V3.2h8.4s.6 0 .8.1c.2.1.5.2.7.4.2.3.4.6.6 1l10.7 21.1c.3.7.7 1.4 1.1 2.2z" />
+                                    </g>
+                                    <g>
+                                        <path class="st1" d="M97 26c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V18.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L82.9 15.1c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9h-8.5V1.2h8.4s.6 0 .8.1c.2.1.5.2.7.4.2.3.4.6.6 1l10.7 21.1c.3.7.7 1.4 1.1 2.2z" />
+                                    </g>
                                 </g>
-                                <g>
-                                    <path class="st1" d="M27.8 26c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V18.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L13.7 15c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9H5.4V1.2h8.5s.6 0 .8.1c.2.1.5.2.7.4l.6.9 10.7 21.1c.3.7.7 1.5 1.1 2.3z" />
-                                </g>
-                                <g>
-                                    <path class="st0" d="M72.2 11.2c-.3.5-.6.8-.9 1s-.7.3-1.2.3c-.4 0-.9-.1-1.4-.4-.5-.3-1.1-.6-1.7-.9-.6-.3-1.4-.7-2.2-.9-.9-.2-1.8-.4-2.8-.4-1.8 0-3.1.4-4 1.2-.9.8-1.3 1.8-1.3 3.1 0 .8.3 1.5.8 2.1.5.6 1.2 1 2.1 1.4s1.9.8 3 1.1c1.1.3 2.2.7 3.4 1.1 1.2.4 2.3.9 3.4 1.4 1.1.6 2.1 1.3 3 2.1.9.9 1.6 1.9 2.1 3.1.5 1.2.8 2.7.8 4.4 0 1.9-.3 3.7-1 5.4s-1.6 3.1-2.9 4.4c-1.4 1.3-3 2.3-4.8 3s-4 1.1-6.3 1.1c-1.3 0-2.6-.1-3.9-.4-1.3-.3-2.6-.6-3.9-1.1s-2.4-1.1-3.5-1.7-2.1-1.4-2.9-2.2l2.9-4.5c.2-.3.5-.6.9-.8.4-.2.8-.3 1.2-.3.6 0 1.1.2 1.7.5.6.4 1.2.8 2 1.2.7.4 1.6.8 2.5 1.2 1 .4 2.1.5 3.4.5 1.7 0 3.1-.4 4.1-1.2 1-.8 1.5-2 1.5-3.7 0-1-.3-1.8-.8-2.4-.5-.6-1.2-1.1-2.1-1.5-.9-.4-1.8-.8-2.9-1.1-1.1-.3-2.2-.6-3.4-1-1.2-.4-2.3-.8-3.4-1.4-1.1-.5-2.1-1.3-2.9-2.1-.9-.9-1.6-2-2.1-3.3-.5-1.3-.8-2.9-.8-4.9 0-1.6.3-3.1.9-4.6.6-1.5 1.5-2.8 2.8-4 .9-1 2.4-1.9 4.2-2.6 1.8-.7 3.8-1 6.1-1 1.3 0 2.5.1 3.7.3 1.2.2 2.4.5 3.4.9 1.1.4 2.1.9 3 1.4s1.8 1.2 2.5 1.8l-2.3 4.4z" />
-                                </g>
-                                <g>
-                                    <path class="st2" d="M74.2 9.2c-.3.5-.6.8-.9 1s-.7.3-1.2.3c-.4 0-.9-.1-1.4-.4-.5-.3-1.1-.6-1.7-.9-.6-.3-1.4-.7-2.2-.9-.9-.2-1.8-.4-2.8-.4-1.8 0-3.1.4-4 1.2-.9.8-1.3 1.8-1.3 3.1 0 .8.3 1.5.8 2.1.5.6 1.2 1 2.1 1.4.9.4 1.9.8 3 1.1 1.1.3 2.2.7 3.4 1.1 1.2.4 2.3.9 3.4 1.4 1.1.6 2.1 1.3 3 2.1.9.9 1.6 1.9 2.1 3.1.5 1.2.8 2.7.8 4.4 0 1.9-.3 3.7-1 5.4s-1.6 3.1-2.9 4.4c-1.4 1.3-3 2.3-4.8 3s-4 1.1-6.3 1.1c-1.3 0-2.6-.1-3.9-.4-1.3-.3-2.6-.6-3.9-1.1s-2.4-1.1-3.5-1.7-2.1-1.4-2.9-2.2l2.9-4.5c.2-.3.5-.6.9-.8.4-.2.8-.3 1.2-.3.6 0 1.1.2 1.7.5.6.4 1.2.8 2 1.2.7.4 1.6.8 2.5 1.2 1 .4 2.1.5 3.4.5 1.7 0 3.1-.4 4.1-1.2 1-.8 1.5-2 1.5-3.7 0-1-.3-1.8-.8-2.4-.5-.6-1.2-1.1-2.1-1.5-.9-.4-1.8-.8-2.9-1.1-1.1-.3-2.2-.6-3.4-1-1.2-.4-2.3-.8-3.4-1.4-1.1-.5-2.1-1.3-2.9-2.1-.9-.9-1.6-2-2.1-3.3-.5-1.3-.8-2.9-.8-4.9 0-1.6.3-3.1.9-4.6.6-1.5 1.5-2.8 2.8-4 .9-1 2.4-1.9 4.2-2.6 1.8-.7 3.8-1 6.1-1 1.3 0 2.5.1 3.7.3 1.2.2 2.4.5 3.4.9 1.1.4 2.1.9 3 1.4s1.8 1.2 2.5 1.8l-2.3 4.4z" />
-                                </g>
-                                <g>
-                                    <path class="st0" d="M95 28c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V20.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L80.9 17.1c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9h-8.5V3.2h8.4s.6 0 .8.1c.2.1.5.2.7.4.2.3.4.6.6 1l10.7 21.1c.3.7.7 1.4 1.1 2.2z" />
-                                </g>
-                                <g>
-                                    <path class="st1" d="M97 26c.4.8.7 1.6 1 2.4.3-.8.7-1.6 1-2.4.4-.8.7-1.6 1.1-2.3l10.7-21c.2-.4.4-.6.6-.8.2-.2.4-.3.7-.4.2-.1.5-.1.8-.1h8.5v41.5h-8.5V18.8c0-1.2.1-2.4.2-3.8l-11 21.3c-.3.7-.8 1.2-1.4 1.5-.6.3-1.2.5-2 .5h-1.3c-.7 0-1.4-.2-2-.5-.6-.3-1-.8-1.4-1.5L82.9 15.1c.1.7.1 1.3.2 2 0 .7.1 1.3.1 1.8v23.9h-8.5V1.2h8.4s.6 0 .8.1c.2.1.5.2.7.4.2.3.4.6.6 1l10.7 21.1c.3.7.7 1.4 1.1 2.2z" />
-                                </g>
-                            </g>
-                        </svg>
-                    </a>
-                    <ul class="nav-links">
-                        <li itemprop="name"><a href="#about" class="about" itemprop="url">O mnie</a> </li>
-                        <li itemprop="name"><a href="#projects" itemprop="url">Projekty</a> </li>
-                        <li itemprop="name"><a href="#skills" itemprop="url">Umiejętności</a> </li>
-                        <li itemprop="name"><a href="#contact" class="contact" itemprop="url">Kontakt</a> </li>
-                        <li class="icon--smDevices">
-                            <a href="https://github.com/msiemieniukmorawski" target="_blank" title="github--smDevices">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z" />
-                                </svg>
-                            </a>
-                        
-                            <a href="https://pl.linkedin.com/in/marcin-siemieniuk-morawski" target="_blank" title="linkedin--smDevices">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                            </svg>
+                        </a>
+                        <ul class="nav-links">
+                            <li itemprop="name"><a href="#about" class="about" itemprop="url">O mnie</a> </li>
+                            <li itemprop="name"><a href="#projects" itemprop="url">Projekty</a> </li>
+                            <li itemprop="name"><a href="#skills" itemprop="url">Umiejętności</a> </li>
+                            <li itemprop="name"><a href="#contact" class="contact" itemprop="url">Kontakt</a> </li>
+                            <li class="icon--smDevices">
+                                <a href="https://github.com/msiemieniukmorawski" target="_blank" title="github--smDevices">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z" />
+                                    </svg>
+                                </a>
+                                <a href="https://pl.linkedin.com/in/marcin-siemieniuk-morawski" target="_blank" title="linkedin--smDevices">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <header class="main__first">
                     <div class="name__first__screen">
                         <div class="name--txt">
@@ -149,11 +149,36 @@
                                 </figcaption>
                             </figure>
                         </div>
+                        <div class="owl__item__container">
+                            <figure class="owl__item--figure">
+                                <div class="owl__item--images--mask">
+                                    <img src="./img/mlifeit.jpg" srcset="./img/mlifeit.jpg 400w, ./img/mlifeit_x2.jpg 700w, ./img/mlifeit_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="Mlifeit" class="owl__item--images">
+                                </div>
+                                <figcaption class="owl__item__txt">
+                                    <h3 class="owl__item--title">MlifeIT</h3>
+                                    <p class="owl__item--subtitle">Zastosowałem: jQcloud, owl carousel 2, Bootstrap 3 i kilka pluginów wp</p>
+                                    <a href="http://www.mlifeit.pl/" target="_blank" class="btn__carousel"><span class="button--mask">Live</span></a>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </section>
                 <section class="projects__html">
                     <h2 class="section--title">PSD &ndash;&gt; Html</h2>
                     <div class="owl__container owl__html">
+                         <div class="owl__item__container">
+                            <figure class="owl__item--figure">
+                                <div class="owl__item--images--mask">
+                                    <img src="./img/portfolio.jpg" srcset="./img/portfolio.jpg 400w, ./img/portfolio_x2.jpg 700w, ./img/portfolio_x3.jpg 992w" sizes="(max-width: 450px) 312px, (max-width: 992px) 624px, 100vw" alt="Portfolio" class="owl__item--images">
+                                </div>
+                                <figcaption class="owl__item__txt">
+                                    <h3 class="owl__item--title">Portfolio</h3>
+                                    <p class="owl__item--subtitle">Zastosowałem: owl carousel 2, TextScramble, ParticlesJS, BEM</p>
+                                    <a href="http://ms-m.pl/" target="_blank" class="btn__carousel"><span class="button--mask">Live</span></a>
+                                   <!--  <a href="https://github.com/msiemieniukmorawski/Weekly-WebDev-Challenge-28" target="_blank" class="btn__carousel btn__carousel--git"><span class="button--mask">github</span></a> -->
+                                </figcaption>
+                            </figure>
+                        </div>
                         <div class="owl__item__container">
                             <figure class="owl__item--figure">
                                 <div class="owl__item--images--mask">
@@ -217,16 +242,10 @@
             <div class="container__about__contact">
                 <div class="half--about half">
                     <section class="about" id="about">
-                        <h2>O mnie</h2>
+                        <h2>Parę słów o mnie</h2>
                         <div class="about--txt">
-                            <p> Marcin Siemieniuk-Morawski 24 lat pracuje jako
-                                <b>Freelance Front-end/WordPress Developer.</b>
-                            </p>
-                            <p>Poszukuję
-                                <b>atrakcyjnej</b> pracy bądź
-                                <b>ciekawych</b> zleceń. Atrakcyjna praca to taka w której będzie trzeba się pogłowić aby wykonać daną czynność, ale również od czasu do czasu projekt jak każdy inny (szablonowy)</p>
-                            <p>Nie cierpię bezczynności i nudy. Swój wolny czas poświęcam na poznawanie nowych mediów i technologii.</p>
-                            <p>Chciałbym nauczyć się:</p>
+                            <p>Nazywam się Marcin Siemieniuk-Morawski i specjalizuje się w front-end web development. Aktualnie pracuję jako freelancer i realizuje projekty na zlecenie. Jednak poszukuje czegoś na stałe, firmy w której będę mógł pracować przy ciekawych projektach. Jestem zmotywowany aby uczyć się nowych technologii i dalej rozwijać swoje umiętności. Podchodzę poważnie do swojej pracy - dokładam wszelkich starań abym sam był zadowolony ze zrealizowanego projektu. Ponadto nie znoszę bezczynności i nudy, w wolnych chwilach czytam o nowinkach branżowych oraz rozwijam swoje hobby (fotografia, jazda na rowerze i filmy).</p>
+                            <p>Technologie, które w najbliższym czasie planuje się nauczyć:</p>
                             <div class="about--icon">
                                 <div class="about--single-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="react" viewbox="0 0 34 32">
@@ -248,17 +267,14 @@
                                     <h4>Magento</h4>
                                 </div>
                             </div>
-                            <p>Kolejność nauki będzie zależała od tego na co firma jest skupiona</p>
                         </div>
                     </section>
                 </div>
                 <div class="half--contact half">
                     <div class="close"></div>
                     <section class="contact" id="contact">
-                        <p>Zainteresowała Ciebie moja strona
-                            <br> Masz ofertę pracy
-                            <br>Chcesz tylko się spotkać i porozmawiać</p>
-                        <h2>Napisz do mnie</h2>
+                        <p>Jeżeli Cię zainteresowałem i chciałbyś (albo chciałabyś) zaproponować mi pracę.</p>
+                        <h2>Skontaktuj się ze mną używając formularza:</h2>
                         <form id="form" class="contact__form" method="post" novalidate="novalidate">
                             <div class="field">
                                 <label for="name">Imię/Frima*</label>
@@ -455,6 +471,8 @@
         </main>
         <footer>
             <div class="container">
+                <p>DESIGNED BY COPYRIGHT © MSM</p>
+                <p>email: <a href="mailto:msiemieniukmorawski@gmail.com">msiemieniukmorawski.com</a></p>
             </div>
         </footer>
     </div>
@@ -462,7 +480,7 @@
         <a href="#first__screen" class="button__top--link"></a>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript/particles.js"></script>
+    <script src="javascript/particles.min.js"></script>
     <script src="javascript/app.js"></script>
     <script src="javascript/owl.carousel.min.js"></script>
     <script src="javascript/main.js"></script>

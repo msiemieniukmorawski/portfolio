@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
         loop: true,
         nav: false,
         dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
     });
     $('.owl__html').owlCarousel({
         loop: true,
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
         loop: true,
         nav: false,
         dots: true,
+        autoplay: true,
+        autoplayTimeout: 4800,
     })
     $('.owl__email').owlCarousel({
         loop: true,
@@ -40,22 +44,23 @@ document.addEventListener("DOMContentLoaded", function() {
         loop: true,
         nav: false,
         dots: true,
+        autoplay: true,
+        autoplayTimeout: 5200,
     })
-
 });
 
 // ——————————————————————————————————————————————————
 // open nav hamburger
 // ——————————————————————————————————————————————————
 
- $('#hamburger').click(function () {
-        $(this).toggleClass('open');
-        $('.nav-links').toggleClass('open');
-    });
-  $('.nav-links li').click(function(){
+$('#hamburger').click(function() {
+    $(this).toggleClass('open');
+    $('.nav-links').toggleClass('open');
+});
+$('.nav-links li').click(function() {
     $('#hamburger').removeClass('open');
-        $('.nav-links').removeClass('open');
-  })
+    $('.nav-links').removeClass('open');
+})
 
 // ——————————————————————————————————————————————————
 // link scroll
@@ -65,49 +70,52 @@ $('.close').on("click", function() {
     $('.half--about').removeClass("show-up");
     $('.half--contact').removeClass("show-down");
     $('body').removeClass("overflow--hide");
+    $('.button__top').removeClass("open");
+    $('.nav__container').removeClass("open");
     setTimeout(function() {
         $('.container__about__contact ').removeClass("zindex");
     }, 500);
 
 })
 $('#button--about').click(function(event) {
-    if($(window).width() > 768){
-         event.preventDefault();
-    $('.half--about').addClass("show-up");
-    $('.half--contact').addClass("show-down");
-    $('body').addClass("overflow--hide");
-    $('.container__about__contact ').addClass("zindex");
-    }
-    else{
+    if ($(window).width() > 768) {
+        event.preventDefault();
+        $('.half--about').addClass("show-up");
+        $('.half--contact').addClass("show-down");
+        $('body').addClass("overflow--hide");
+        $('.button__top').addClass("open");
+        $('.nav__container').addClass("open");
+        $('.container__about__contact ').addClass("zindex");
+    } else {
         if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-                location.hostname == this.hostname
-            ) {
-                // Figure out element to scroll to
-                var target = $(this.hash);
-                target = target.length ? target : $('[class=' + this.hash.slice(1) + ']');
-                // Does a scroll target exist?
-                if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function() {
-                        // Callback after animation
-                        // Must change focus!
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
-                            return false;
-                        } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
-                        };
-                    });
-                }
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+            location.hostname == this.hostname
+        ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[class=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function() {
+                    // Callback after animation
+                    // Must change focus!
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) { // Checking if the target was focused
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                        $target.focus(); // Set focus again
+                    };
+                });
             }
+        }
     }
-   
+
 
 });
 $('a[href*="#"]')
@@ -120,12 +128,16 @@ $('a[href*="#"]')
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
             $('body').addClass("overflow--hide");
+            $('.button__top').addClass("open");
+            $('.nav__container').addClass("open");
             $('.container__about__contact ').addClass("zindex");
         } else if (hasClass(this, "contact") && $(window).width() > 768) {
             event.preventDefault();
             $('.half--about').addClass("show-up");
             $('.half--contact').addClass("show-down");
             $('body').addClass("overflow--hide");
+            $('.button__top').addClass("open");
+            $('.nav__container').addClass("open");
             $('.container__about__contact ').addClass("zindex");
         } else {
 
@@ -143,7 +155,7 @@ $('a[href*="#"]')
                     // Only prevent default if animation is actually gonna happen
                     event.preventDefault();
                     $('html, body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top-80
                     }, 1000, function() {
                         // Callback after animation
                         // Must change focus!
@@ -160,7 +172,6 @@ $('a[href*="#"]')
             }
         }
     });
-
 
 // ——————————————————————————————————————————————————
 //show button up
@@ -373,7 +384,6 @@ $(".form__send--message").on("click", function() {
     var message = $("#message").val();
 
     if ($(".form__send--message").attr('data-send') == "true") {
-        console.log(name + '' + subject + ' ' + email + ' ' + message);
         startSubmit(name, subject, email, message);
     } else {
 
@@ -403,42 +413,50 @@ $(document).ajaxStop(function() {
 //hover skills
 // ——————————————————————————————————————————————————
 
-var nodes  = document.querySelectorAll('.single__skill'),
+var nodes = document.querySelectorAll('.single__skill'),
     _nodes = [].slice.call(nodes, 0);
 
-var getDirection = function (ev, obj) {
+var getDirection = function(ev, obj) {
     var w = obj.offsetWidth,
         h = obj.offsetHeight,
         x = (ev.pageX - obj.offsetLeft - (w / 2) * (w > h ? (h / w) : 1)),
         y = (ev.pageY - obj.offsetTop - (h / 2) * (h > w ? (w / h) : 1)),
-        d = Math.round( Math.atan2(y, x) / 1.57079633 + 5 ) % 4;
-  
+        d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+
     return d;
 };
 
-var addClass = function ( ev, obj, state ) {
-    var direction = getDirection( ev, obj ),
+var addClass = function(ev, obj, state) {
+    var direction = getDirection(ev, obj),
         class_suffix = "";
-    
+
     obj.className = "";
-    
-    switch ( direction ) {
-        case 0 : class_suffix = '-top';    break;
-        case 1 : class_suffix = '-right';  break;
-        case 2 : class_suffix = '-bottom'; break;
-        case 3 : class_suffix = '-left';   break;
+
+    switch (direction) {
+        case 0:
+            class_suffix = '-top';
+            break;
+        case 1:
+            class_suffix = '-right';
+            break;
+        case 2:
+            class_suffix = '-bottom';
+            break;
+        case 3:
+            class_suffix = '-left';
+            break;
     }
-    
-    obj.classList.add( state + class_suffix );
+
+    obj.classList.add(state + class_suffix);
 };
 
 // bind events
-_nodes.forEach(function (el) {
-    el.addEventListener('mouseover', function (ev) {
-        addClass( ev, this, 'in' );
+_nodes.forEach(function(el) {
+    el.addEventListener('mouseover', function(ev) {
+        addClass(ev, this, 'in');
     }, false);
 
-    el.addEventListener('mouseout', function (ev) {
-        addClass( ev, this, 'out' );
+    el.addEventListener('mouseout', function(ev) {
+        addClass(ev, this, 'out');
     }, false);
 });

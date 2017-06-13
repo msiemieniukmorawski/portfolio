@@ -7,11 +7,23 @@ main.container {
     padding: 0;
 }
 
-.container {
+.container,
+.main-navigation {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.nav__container {
+    position: fixed;
+    z-index: 200;
+    background-color: #1C1D25;
+    left: 0;
+    right: 0;
+    &.open {
+        z-index: 2;
+    }
 }
 
 .overflow--hide {
@@ -42,7 +54,7 @@ main.container {
 }
 
 .nav-logo {
-    margin: 20px;
+    margin: 10px;
     display: inline-block;
     position: relative;
     transition: .5s ease-in-out;
@@ -52,10 +64,10 @@ main.container {
 .hamburger {
     width: 30px;
     height: 30px;
-    position: absolute;
+    position: fixed;
     right: 25px;
     top: 25px;
-    z-index: 10;
+    z-index: 220;
     cursor: pointer;
     display: block;
     span {
@@ -356,7 +368,20 @@ main.container {
 
 .button__bottom {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
+    animation: button__bottom 2s infinite;
+}
+
+@keyframes button__bottom {
+    0 {
+        bottom: 20px
+    }
+    50% {
+        bottom: 0
+    }
+    100% {
+        bottom: 20px
+    }
 }
 
 .button__bottom--link {
@@ -371,6 +396,22 @@ main.container {
     cursor: pointer;
     z-index: 20;
     display: none;
+    animation: button__top 2s infinite;
+    &.open {
+        z-index: 2;
+    }
+}
+
+@keyframes button__top {
+    0 {
+        bottom: 2px
+    }
+    50% {
+        bottom: 20px
+    }
+    100% {
+        bottom: 2px
+    }
 }
 
 .button__top--link {
@@ -507,8 +548,6 @@ main.container {
     z-index: 4;
 }
 
-
-
 .owl__item--title {
     font-size: 2.2em;
     font-weight: 600;
@@ -581,9 +620,11 @@ main.container {
     flex-wrap: wrap;
     flex-direction: column;
 }
-#about{
+
+#about {
     outline: none;
 }
+
 .half--about {
     font-size: 1.2em;
     background-color: #f06449;
@@ -632,9 +673,11 @@ main.container {
 .close {
     display: none;
 }
-#contact{
+
+#contact {
     outline: none;
 }
+
 .contact {
     max-width: 700px;
     width: 100%;
@@ -951,5 +994,29 @@ $timing-fn: ease;
     }
     to {
         transform: rotate3d(0, 1, 0, 104deg)
+    }
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #1C1D25;
+    color: #ef3636;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-transform: uppercase;
+        padding: 20px 0;
+        letter-spacing: 1px;
+        font-size: 0.8em;
+    }
+    p {
+        margin: 0 10px;
+        line-height: 2em;
+    }
+    a {
+        color: #ef3636;
     }
 }
